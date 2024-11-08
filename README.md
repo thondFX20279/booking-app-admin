@@ -1,4 +1,32 @@
+# Admin Dashboard - Booking App
+This is the Admin section of the Booking App, built with ReactJS and deployed on Netlify. The admin dashboard allows for the management of users, transactions, and hotel rooms.
+
+## Demo Link
+You can view the demo here: [Admin Dashboard Demo](https://wonderful-hamster-caa796.netlify.app/)
+
+## Functionalities
+
+This section provides admins with the following features:
+
+- **Login** - Secure login for admin access.
+- **Manage Users** - Admin can perform CRUD (Create, Read, Update, Delete) operations on user data.
+- **Transaction History** - Admin can view a detailed list of user transactions.
+- **CRUD Hotel** - Admin can manage hotel details, such as adding, updating, or deleting hotels.
+- **CRUD Room** - Admin can manage room details, such as adding, updating, or deleting rooms.
+
+## Technologies Used
+
+- ReactJS
+- HTML
+- CSS
+- JavaScript
+- Netlify (for hosting)
+
 # Getting Started with Create React App
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/thondFX20279/booking-app-admin.git
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
