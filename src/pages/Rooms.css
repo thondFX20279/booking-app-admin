@@ -1,0 +1,15 @@
+.roomActions {
+  display: flex;
+  gap: 15px;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  border: none;
+}
+.delete-btn {
+  color: red;
+}
+.edit-btn {
+  color: rgb(11, 174, 41);
+}

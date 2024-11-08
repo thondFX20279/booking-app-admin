@@ -1,0 +1,44 @@
+.newHotel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 200px;
+}
+.newHotel > div {
+  flex: 1;
+}
+.form-controls {
+  margin-bottom: 15px;
+}
+.form-controls,
+.form-controls label,
+.form-controls input {
+  width: 100%;
+  display: block;
+}
+.form-controls label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.form-controls input {
+  padding: 5px 3px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.form-controls input:focus {
+  outline: none;
+}
+.submit-btn {
+  padding: 5px 15px;
+  display: block;
+  width: 150px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+.submit-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}

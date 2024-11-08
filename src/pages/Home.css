@@ -1,0 +1,65 @@
+.profit {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+.profitItem {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.profitItem .title {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #9a9292;
+}
+.profitItem .icon {
+  text-align: right;
+}
+.profitItem .number {
+  font-size: 20px;
+}
+/* Table styling */
+.latestTransaction {
+  margin-top: 50px;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.thead {
+  background-color: #32a4c1;
+  color: white;
+}
+
+.thead td,
+.tbody td {
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+}
+.status {
+  display: block;
+  background-color: red;
+}
+.btn {
+  display: block;
+  padding: 8px 5px;
+  border: none;
+  border-radius: 10px;
+  color: #0d9c09;
+}
+.Booked {
+  background-color: rgb(246, 150, 133);
+}
+.Checkin {
+  background-color: rgb(57, 209, 57);
+}
+.Checkout {
+  background-color: rgb(211, 208, 242);
+}

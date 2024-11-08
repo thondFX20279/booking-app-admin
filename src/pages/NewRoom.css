@@ -1,0 +1,23 @@
+.newRoom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 200px;
+}
+.newRoom > div {
+  flex: 1;
+}
+.roomsPart2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.roomsPart2 > div {
+  flex: 1;
+}
+.roomsPart2 > div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
