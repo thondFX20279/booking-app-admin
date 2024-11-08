@@ -33,17 +33,17 @@ const Transactions = () => {
               transactions.map((tr, i) => (
                 <tr>
                   <td>{i + 1}</td>
-                  <td>{tr._id}</td>
-                  <td>{getLatedName(tr.user.fullName)}</td>
+                  <td>{tr?._id}</td>
+                  <td>{getLatedName(tr?.user?.fullName)}</td>
                   <td>{tr.hotel.name}</td>
                   <td>{tr.room.join(",")}</td>
                   <td>
-                    {formatDate(tr.dateStart)}-{formatDate(tr.dateEnd)}
+                    {formatDate(tr?.dateStart)}-{formatDate(tr?.dateEnd)}
                   </td>
-                  <td>{tr.price}</td>
-                  <td>{tr.payment}</td>
+                  <td>{tr?.price}</td>
+                  <td>{tr?.payment}</td>
                   <td>
-                    <span className={`btn ${tr.status}`}>{tr.status}</span>
+                    <span className={`btn ${tr?.status}`}>{tr?.status}</span>
                   </td>
                 </tr>
               ))}

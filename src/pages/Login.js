@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axiosClient from "../api/axiosClient";
@@ -6,6 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import "./Login.css";
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { dispatch } = useContext(AuthContext);
 
@@ -17,8 +18,9 @@ const Login = () => {
   } = useForm();
 
   const submitHandler = async (data) => {
+    setIsLoading(true);
     try {
-      const res = await axiosClient.post("/auth/login", { ...data, isAdmin: true });
+      const res = await axiosClient.post("/auth/login-admin", { ...data, isAdmin: true });
       if (res.status === 200) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
         navigate("/");
@@ -35,6 +37,7 @@ const Login = () => {
         }
       }
     }
+    setIsLoading(false);
   };
   return (
     <div className="auth">
@@ -68,7 +71,7 @@ const Login = () => {
           {errors.password && <p style={{ color: "red" }}>{errors.password.message}</p>}
         </div>
         <div className="form-control">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-primary" type="submit" disabled={isLoading}>
             Login
           </button>
         </div>

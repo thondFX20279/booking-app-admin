@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axiosClient from "../api/axiosClient";
 import useFetch from "../hooks/useFetch";
 import "./NewRoom.css";
@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const EditRoom = () => {
   const { roomId } = useParams();
-
+  const [isLoading, setIsLoading] = useState(false);
   const { dispatch } = useAuth();
   const navigate = useNavigate();
 
@@ -23,6 +23,7 @@ const EditRoom = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     let roomNumbersArray = roomData.roomNumbers;
     if (!Array.isArray(roomData.roomNumbers)) {
       roomNumbersArray = roomData.roomNumbers.split(",").map((num) => num.trim());
@@ -47,6 +48,7 @@ const EditRoom = () => {
         alert(`Failed!`);
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -115,7 +117,7 @@ const EditRoom = () => {
             />
           </div>
           <div>
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="submit-btn" disabled={isLoading}>
               Send
             </button>
           </div>

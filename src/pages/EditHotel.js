@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axiosClient from "../api/axiosClient";
 import useFetch from "../hooks/useFetch";
 import { useAuth } from "../context/AuthContext";
 const EditHotel = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const { hotelId } = useParams();
   const { data: rooms } = useFetch("/rooms");
   const { data: hotelData, setData: setHotelData } = useFetch(`/hotels/find/${hotelId}`);
@@ -55,6 +56,7 @@ const EditHotel = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const photosArray = hotelData.photos.split(",").map((url) => url.trim());
     const newHotel = {
       ...hotelData,
@@ -76,6 +78,7 @@ const EditHotel = () => {
         alert(`Failed`);
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -213,7 +216,7 @@ const EditHotel = () => {
             ))}
           </select>
         </div>
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="submit-btn" disabled={isLoading}>
           Send
         </button>
       </form>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Hotel.css";
 import useFetch from "../hooks/useFetch";
 import axiosClient from "../api/axiosClient";
@@ -8,9 +8,10 @@ import { useAuth } from "../context/AuthContext";
 const Hotel = () => {
   const { user, dispatch } = useAuth();
   const { data: hotels, reFetch } = useFetch(`/hotels?limit=8&isAdmin=${user.isAdmin}`);
-
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const deleteHotel = async (hotelId) => {
+    setIsLoading(true);
     try {
       const confirm = window.confirm("Are you sure?");
       if (confirm) {
@@ -37,6 +38,7 @@ const Hotel = () => {
         alert("Page not Found");
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -72,7 +74,7 @@ const Hotel = () => {
                   <td>{hotel.city}</td>
                   <td>
                     <div className="hotelActions">
-                      <button className="btn delete-btn" onClick={(e) => deleteHotel(hotel._id)}>
+                      <button className="btn delete-btn" disabled={isLoading} onClick={(e) => deleteHotel(hotel._id)}>
                         Delete
                       </button>
                       <button className="btn edit-btn" onClick={() => navigate(`/edit-hotel/${hotel._id}`)}>
