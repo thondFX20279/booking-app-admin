@@ -2,7 +2,7 @@
 This is the Admin section of the Booking App, built with ReactJS and deployed on Netlify. The admin dashboard allows for the management of users, transactions, and hotel rooms.
 
 ## Demo Link
-You can view the demo here: [Admin Dashboard Demo](https://wonderful-hamster-caa796.netlify.app/)
+You can view the demo here: [Admin Dashboard Demo](https://booking-app-admin-12323232.netlify.app/)
 
 ## Functionalities
 
