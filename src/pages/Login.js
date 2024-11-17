@@ -15,7 +15,7 @@ const Login = () => {
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues: { username: "nguyenducthodn123@gmail.com", password: "nguyenductho123" } });
 
   const submitHandler = async (data) => {
     setIsLoading(true);
