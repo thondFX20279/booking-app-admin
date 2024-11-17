@@ -15,7 +15,9 @@ const Login = () => {
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm({ defaultValues: { username: "nguyenducthodn123@gmail.com", password: "nguyenductho123" } });
+  } = useForm({
+    defaultValues: { username: process.env.REACT_APP_USERNAME, password: process.env.REACT_APP_USERNAME },
+  });
 
   const submitHandler = async (data) => {
     setIsLoading(true);
